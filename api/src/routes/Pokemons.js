@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
   const name = req.query.name;
   const allPokemons = await getAllPokemons();
   if (name) {
-    let pokemonName = await allPokemons.filter((p) =>
+    const pokemonName = await allPokemons.filter((p) =>
       p.name.toLowerCase().includes(name.toLowerCase())
     );
     pokemonName.length
